@@ -70,25 +70,24 @@ To run the development server locally:
    
 * 2. **Install dependencies:**
 
-```bash
 npm install
+
 # or
+
 yarn install
-```bash
 
 * 3. **Environment Variables:**
+
 Create a .env.local file in the root directory and add your keys (World ID App ID, Crossmint API Keys, etc.):
 
-```bash
 NEXT_PUBLIC_WLD_APP_ID=your_app_id
 NEXT_PUBLIC_CROSSMINT_API_KEY=your_key
-```bash
+
 
 * 4. **Run the server:**
 
-```bash
 npm run dev
-```bash
+
 Open http://localhost:3000 with your browser to see the result.
 
 **🏆 Team**
