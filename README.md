@@ -4,7 +4,7 @@ Markdown
 
 ![Juby Banner](https://img.shields.io/badge/Status-Hackathon%20MVP-blueviolet) ![Stellar](https://img.shields.io/badge/Built%20On-Stellar%20%7C%20Soroban-white?logo=stellar) ![World App](https://img.shields.io/badge/Mini%20App-World%20ID-black?logo=worldcoin)
 
-**Juby** is a self-custody retirement Mini App designed for the **Stellar Genesis Track**. We bridge the gap between **World App's liquidity (Base)** and **Stellar's financial infrastructure** to create a frictionless, cross-chain savings experience for Latin American freelancers.
+**Juby** is a self-custody retirement Mini App designed for the **Stellar Genesis Track**. We bridge the gap between **World App's liquidity** and **Stellar's financial infrastructure** to create a frictionless, cross-chain savings experience for Latin American freelancers.
 
 🔗 **Live Demo:** [Launch Juby App](https://juby-app-eth.vercel.app)
 
@@ -12,7 +12,7 @@ Markdown
 
 ## 🚀 The Problem
 Latin American professionals face a "Discipline Crisis". While they hold funds in crypto wallets like World App, these tools are built for spending, not saving.
-* **Fragmentation:** 15M+ users hold USDC on Base (World Chain) but lack access to Stellar's efficient DeFi ecosystem.
+* **Fragmentation:** 20M+ users uses the World App but lack access to Stellar's efficient DeFi ecosystem.
 * **UX Friction:** Bridging funds and managing seed phrases prevents mass adoption of self-custody savings.
 
 ## 💡 The Solution: Invisible Cross-Chain Savings
@@ -62,31 +62,37 @@ Once funds land on Stellar, the Juby interface allows users to commit them to a 
 
 To run the development server locally:
 
-1. **Clone the repository:**
+* 1. **Clone the repository:**
+
    ```bash
    git clone [https://github.com/Stefano-Cintioli/juby-app-stellar.git](https://github.com/Stefano-Cintioli/juby-app-stellar.git)
    cd juby-app-stellar
-Install dependencies:
+   
+* 2. **Install dependencies:**
 
-Bash
-
+```bash
 npm install
 # or
+```bash
 yarn install
-Environment Variables: Create a .env.local file in the root directory and add your keys (World ID App ID, Crossmint API Keys, etc.):
 
-Bash
+* 3. **Environment Variables:**
+Create a .env.local file in the root directory and add your keys (World ID App ID, Crossmint API Keys, etc.):
 
+```bash
 NEXT_PUBLIC_WLD_APP_ID=your_app_id
 NEXT_PUBLIC_CROSSMINT_API_KEY=your_key
-Run the server:
 
-Bash
 
+* 4. **Run the server:**
+
+```bash
 npm run dev
+
 Open http://localhost:3000 with your browser to see the result.
 
-🏆 Team
+**🏆 Team**
+
 Stefano Cintioli - Product & Project Manager
 
 Renzo Banegas - Smart Contracts & Backend (Soroban/Rozo)
