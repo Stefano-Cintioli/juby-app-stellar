@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Markdown
 
-## Getting Started
+# 🏦 Juby: The Invisible Pension Protocol
 
-First, run the development server:
+![Juby Banner](https://img.shields.io/badge/Status-Hackathon%20MVP-blueviolet) ![Stellar](https://img.shields.io/badge/Built%20On-Stellar%20%7C%20Soroban-white?logo=stellar) ![World App](https://img.shields.io/badge/Mini%20App-World%20ID-black?logo=worldcoin)
 
-```bash
+**Juby** is a self-custody retirement Mini App designed for the **Stellar Genesis Track**. We bridge the gap between **World App's liquidity (Base)** and **Stellar's financial infrastructure** to create a frictionless, cross-chain savings experience for Latin American freelancers.
+
+🔗 **Live Demo:** [Launch Juby App](https://juby-app-eth.vercel.app)
+
+---
+
+## 🚀 The Problem
+Latin American professionals face a "Discipline Crisis". While they hold funds in crypto wallets like World App, these tools are built for spending, not saving.
+* **Fragmentation:** 15M+ users hold USDC on Base (World Chain) but lack access to Stellar's efficient DeFi ecosystem.
+* **UX Friction:** Bridging funds and managing seed phrases prevents mass adoption of self-custody savings.
+
+## 💡 The Solution: Invisible Cross-Chain Savings
+Juby abstracts the blockchain entirely. We built a "Smart Pension Protocol" that allows users to:
+1.  **Login with World ID** (Proof of Human).
+2.  **Instantly generate a Stellar Wallet** (via Crossmint Account Abstraction).
+3.  **Deposit USDC from Base** via "Intents" (via Rozo).
+4.  **Auto-Invest** in DeFi Index Vaults on Stellar.
+
+---
+
+## 🛠️ Tech Stack & Architecture
+
+This project leverages cutting-edge interoperability and abstraction tools:
+
+### 1. 🆔 Identity & Onboarding: **World ID + Crossmint**
+Instead of forcing users to manage keys, we use **World ID** for authentication.
+* We extract the user's verified email from World ID.
+* We pass this email to **Crossmint's API** to spin up a custodial/embedded **Stellar Wallet** instantly.
+* *Result:* Invisible onboarding. The user gets a Stellar address (`G...`) without creating a seed phrase.
+
+### 2. 🌉 Cross-Chain Liquidity: **Rozo (Intents)**
+We solve the lack of CCTP on Stellar by using an Intent-based architecture.
+* Users sign an "Intent" to deposit USDC on **Base** (World App Wallet).
+* **Rozo's Relayer** detects this signal and releases the equivalent liquidity into the user's **Stellar Wallet**.
+
+### 3. 💸 Yield Strategy: **DeFi Index**
+Once funds land on Stellar, the Juby interface allows users to commit them to a Vault strategy (DeFi Index simulation for MVP) to generate long-term yield.
+
+### 4. 🎨 Frontend
+* **Framework:** Next.js 14 (App Router).
+* **Styling:** Tailwind CSS (Mobile-first for World App integration).
+* **Integration:** MiniKit (World ID SDK).
+
+---
+
+## 📸 Key Features (Hackathon Scope)
+
+- [x] **Sybil-Resistant Login:** Verify unique humanity via World ID.
+- [x] **Smart Wallet Generation:** Automatic Stellar account creation via Crossmint.
+- [x] **Cross-Chain Bridge:** Base -> Stellar liquidity injection.
+- [x] **Asset Dashboard:** View locked savings and projected growth.
+
+---
+
+## 💻 Getting Started
+
+To run the development server locally:
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/Stefano-Cintioli/juby-app-stellar.git](https://github.com/Stefano-Cintioli/juby-app-stellar.git)
+   cd juby-app-stellar
+Install dependencies:
+
+Bash
+
+npm install
+# or
+yarn install
+Environment Variables: Create a .env.local file in the root directory and add your keys (World ID App ID, Crossmint API Keys, etc.):
+
+Bash
+
+NEXT_PUBLIC_WLD_APP_ID=your_app_id
+NEXT_PUBLIC_CROSSMINT_API_KEY=your_key
+Run the server:
+
+Bash
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Open http://localhost:3000 with your browser to see the result.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🏆 Team
+Stefano Cintioli - Product & Project Manager
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Renzo Banegas - Smart Contracts & Backend (Soroban/Rozo)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Joaquín Cortez - Frontend & UX
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built with ❤️ for the Stellar Hackathon: Genesis Track.
